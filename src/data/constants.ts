@@ -1,39 +1,17 @@
-// thoda zada ts ho gya idhar — fixed cleanly 😄
-
 /* =========================
    SKILLS
 ========================= */
 
 export enum SkillNames {
   PYTHON = "python",
-  JAVASCRIPT = "javascript",
-  TYPESCRIPT = "typescript",
-  GO = "go",
   SQL = "sql",
-
-  REACT = "react",
-  NEXTJS = "nextjs",
-  TAILWIND = "tailwind",
-
-  FASTAPI = "fastapi",
-  FLASK = "flask",
-  NODEJS = "nodejs",
-
-  POSTGRES = "postgres",
-  MONGODB = "mongodb",
-  REDIS = "redis",
-
   DOCKER = "docker",
-  AWS = "aws",
   LINUX = "linux",
   GIT = "git",
-  GITHUB = "github",
-
-  TENSORFLOW = "tensorflow",
-  OPENCV = "opencv",
-  NLP = "nlp",
-  SOLIDITY = "solidity",
-  ETHEREUM = "ethereum",
+  POWERBI = "powerbi",
+  EXCEL = "excel",
+  VBA = "vba",
+  ERP = "erp",
 }
 
 export type Skill = {
@@ -50,162 +28,81 @@ export const SKILLS: Record<SkillNames, Skill> = {
     id: 1,
     name: "python",
     label: "Python",
-    shortDescription: "Primary language for AI, ML pipelines, and backend systems.",
+    shortDescription: "Automatisation, analyse de données et pipelines de données.",
     color: "#3776AB",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
   },
 
-  [SkillNames.JAVASCRIPT]: {
-    id: 2,
-    name: "javascript",
-    label: "JavaScript",
-    shortDescription: "Core language for full-stack development.",
-    color: "#f0db4f",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  },
-
-  [SkillNames.TYPESCRIPT]: {
-    id: 3,
-    name: "typescript",
-    label: "TypeScript",
-    shortDescription: "Type-safe scalable frontend & backend systems.",
-    color: "#007acc",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  },
-
-  [SkillNames.GO]: {
-    id: 4,
-    name: "go",
-    label: "Go",
-    shortDescription: "High-performance concurrent backend services.",
-    color: "#00ADD8",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
-  },
-
   [SkillNames.SQL]: {
-    id: 5,
+    id: 2,
     name: "sql",
     label: "SQL",
-    shortDescription: "Relational database querying and optimization.",
+    shortDescription: "Modélisation de données et requêtes sur bases relationnelles.",
     color: "#336791",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
   },
 
-  [SkillNames.REACT]: {
-    id: 6,
-    name: "react",
-    label: "React",
-    shortDescription: "Interactive and scalable UI development.",
-    color: "#61dafb",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-
-  [SkillNames.NEXTJS]: {
-    id: 7,
-    name: "nextjs",
-    label: "Next.js",
-    shortDescription: "Production-ready full-stack React framework.",
-    color: "#ffffff",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  },
-
-  [SkillNames.FASTAPI]: {
-    id: 8,
-    name: "fastapi",
-    label: "FastAPI",
-    shortDescription: "High-performance Python REST APIs.",
-    color: "#009688",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
-  },
-
-  [SkillNames.NODEJS]: {
-    id: 9,
-    name: "nodejs",
-    label: "Node.js",
-    shortDescription: "Backend services with JavaScript runtime.",
-    color: "#6cc24a",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-  },
-
-  [SkillNames.POSTGRES]: {
-    id: 10,
-    name: "postgres",
-    label: "PostgreSQL",
-    shortDescription: "Reliable relational database systems.",
-    color: "#336791",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-  },
-
-  [SkillNames.MONGODB]: {
-    id: 11,
-    name: "mongodb",
-    label: "MongoDB",
-    shortDescription: "Scalable NoSQL database.",
-    color: "#47A248",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-  },
-
-  [SkillNames.REDIS]: {
-    id: 12,
-    name: "redis",
-    label: "Redis",
-    shortDescription: "In-memory caching and queues.",
-    color: "#DC382D",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-  },
-
   [SkillNames.DOCKER]: {
-    id: 13,
+    id: 3,
     name: "docker",
     label: "Docker",
-    shortDescription: "Containerized deployments.",
+    shortDescription: "Auto-hébergement et déploiement de services conteneurisés.",
     color: "#2496ed",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   },
 
-  [SkillNames.AWS]: {
-    id: 14,
-    name: "aws",
-    label: "AWS",
-    shortDescription: "Cloud infrastructure and deployment.",
-    color: "#ff9900",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aws/aws-original.svg",
-  },
-
   [SkillNames.LINUX]: {
-    id: 15,
+    id: 4,
     name: "linux",
     label: "Linux",
-    shortDescription: "Server & system-level operations.",
+    shortDescription: "Administration serveur et automatisation système.",
     color: "#ffffff",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
   },
 
   [SkillNames.GIT]: {
-    id: 16,
+    id: 5,
     name: "git",
     label: "Git",
-    shortDescription: "Version control and collaboration.",
+    shortDescription: "Versioning et collaboration sur projets techniques.",
     color: "#f1502f",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
   },
 
-  [SkillNames.TENSORFLOW]: {
-    id: 17,
-    name: "tensorflow",
-    label: "TensorFlow",
-    shortDescription: "Deep learning frameworks.",
-    color: "#FF6F00",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+  [SkillNames.POWERBI]: {
+    id: 6,
+    name: "powerbi",
+    label: "Power BI",
+    shortDescription: "Dashboards de pilotage, KPIs et visualisation de données décisionnelles.",
+    color: "#F2C811",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg",
   },
 
-  [SkillNames.OPENCV]: {
-    id: 18,
-    name: "opencv",
-    label: "OpenCV",
-    shortDescription: "Computer vision pipelines.",
-    color: "#5C3EE8",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
+  [SkillNames.EXCEL]: {
+    id: 7,
+    name: "excel",
+    label: "Excel Avancé",
+    shortDescription: "TCD, Power Query, modélisation et automatisation des flux de données.",
+    color: "#217346",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg",
+  },
+
+  [SkillNames.VBA]: {
+    id: 8,
+    name: "vba",
+    label: "VBA",
+    shortDescription: "Macros et automatisation Excel pour l'industrie.",
+    color: "#8B4FBE",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg",
+  },
+
+  [SkillNames.ERP]: {
+    id: 9,
+    name: "erp",
+    label: "ERP",
+    shortDescription: "Utilisation et intégration ERP (Proconcept) en contexte achats.",
+    color: "#FF6B35",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
   },
 };
 
@@ -226,57 +123,54 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    startDate: "Jul 2025",
-    endDate: "Aug 2025",
-    title: "SDE Intern",
-    company: "Bluestock Fintech",
+    startDate: "Sep 2025",
+    endDate: "Fév 2026",
+    title: "Stage Transformation Achats",
+    company: "G&F Châtelain – Chanel Horlogerie & Joaillerie",
     description: [
-      "Worked on production-grade fintech backend systems using FastAPI and PostgreSQL.",
-      "Developed and optimized 10+ REST APIs for secure data handling and integrations.",
-      "Improved system performance, reliability, and scalability.",
+      "Automatisation de l'analyse de risques fournisseurs avec classification et dashboard Power BI.",
+      "Conception de plusieurs dashboards de pilotage achats (dépenses, performance fournisseurs, qualité).",
+      "Mise en place de chaînes de synchronisation Excel → Power BI → base de données.",
+      "Formalisation des processus achats et mise en conformité du référentiel fournisseurs.",
     ],
     skills: [
-      SkillNames.PYTHON,
-      SkillNames.FASTAPI,
-      SkillNames.POSTGRES,
-      SkillNames.DOCKER,
-      SkillNames.AWS,
+      SkillNames.POWERBI,
+      SkillNames.EXCEL,
+      SkillNames.SQL,
+      SkillNames.ERP,
     ],
   },
   {
     id: 2,
-    startDate: "Sep 2025",
-    endDate: "Nov 2025",
-    title: "Intern",
-    company: "Infosys Springboard",
+    startDate: "Mar 2025",
+    endDate: "Août 2025",
+    title: "Stage Assistant Ingénieur R&D",
+    company: "Stellantis – Centre Technique de Belchamp",
     description: [
-      "Worked on industry-relevant software development projects.",
-      "Gained hands-on experience with backend systems and databases.",
+      "Étude approfondie d'un prototype de disque de frein à revêtement dur (hard coating).",
+      "Caractérisation, suivi des protocoles d'essais et traitement des données expérimentales.",
+      "Rédaction de rapports techniques et contribution aux revues d'avancement projet.",
     ],
     skills: [
+      SkillNames.EXCEL,
       SkillNames.PYTHON,
-      SkillNames.SQL,
       SkillNames.GIT,
-      SkillNames.LINUX,
     ],
   },
   {
     id: 3,
-    startDate: "2023",
-    endDate: "Present",
-    title: "AI & Full-Stack Developer",
-    company: "Independent Projects & Open Source",
+    startDate: "2018",
+    endDate: "2023",
+    title: "Apprenti Mécanicien Automobile",
+    company: "Garage Feneis (Peugeot/Citroën) & Garage André",
     description: [
-      "Built AI-powered systems in fraud detection, NLP, and computer vision.",
-      "Developed full-stack and blockchain-based applications with real-world impact.",
-      "Contributed to industrial-grade open-source projects (GSSoC, SSOC).",
+      "5 ans d'alternance en diagnostic et maintenance sur l'ensemble des organes mécaniques et électroniques.",
+      "Réception clientèle, conseil technique et activité personnelle d'achat-revente de véhicules.",
+      "1ère place — Concours national des apprentis mécaniciens BMW France (avril 2023).",
     ],
     skills: [
-      SkillNames.PYTHON,
-      SkillNames.TENSORFLOW,
-      SkillNames.OPENCV,
-      SkillNames.REACT,
-      SkillNames.NEXTJS,
+      SkillNames.LINUX,
+      SkillNames.GIT,
     ],
   },
 ];
@@ -287,13 +181,13 @@ export const EXPERIENCE: Experience[] = [
 
 export const themeDisclaimers = {
   light: [
-    "Warning: light mode unlocked 🌞",
-    "Your eyes have entered hard mode",
-    "Brightness turned up to 11",
+    "Mode clair activé ☀️",
+    "Les yeux plissent légèrement",
+    "Luminosité à fond",
   ],
   dark: [
-    "Welcome back to the shadows 🌙",
-    "Dark mode supremacy 🖤",
-    "Your eyes thank you",
+    "Bienvenue dans l'obscurité 🌙",
+    "Dark mode, évidemment 🖤",
+    "Tes yeux te remercient",
   ],
 };
