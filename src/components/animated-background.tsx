@@ -381,17 +381,30 @@ const AnimatedBackground = () => {
   }, [splineApp, isLoading, activeSection]);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Spline
-        className="w-full h-full fixed"
-        ref={splineContainer}
-        onLoad={(app: Application) => {
-          setSplineApp(app);
-          bypassLoading();
-        }}
-        scene="/assets/skills-keyboard.spline"
-      />
-    </Suspense>
+    <>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Spline
+          className="w-full h-full fixed"
+          ref={splineContainer}
+          onLoad={(app: Application) => {
+            setSplineApp(app);
+            bypassLoading();
+          }}
+          scene="/assets/skills-keyboard.spline"
+        />
+      </Suspense>
+      {selectedSkill && (
+        <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
+          <div className="bg-black/80 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4 text-center shadow-2xl min-w-[220px]">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <img src={selectedSkill.icon} alt={selectedSkill.label} className="w-5 h-5" />
+              <span className="text-white font-semibold text-sm">{selectedSkill.label}</span>
+            </div>
+            <p className="text-white/60 text-xs leading-relaxed">{selectedSkill.shortDescription}</p>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 
