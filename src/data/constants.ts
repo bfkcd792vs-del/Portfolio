@@ -12,6 +12,7 @@ export enum SkillNames {
   EXCEL = "excel",
   VBA = "vba",
   ERP = "erp",
+  ADOBE = "adobe",
 }
 
 export type Skill = {
@@ -103,6 +104,15 @@ export const SKILLS: Record<SkillNames, Skill> = {
     shortDescription: "Utilisation et intégration ERP (Proconcept) en contexte achats.",
     color: "#FF6B35",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
+  },
+
+  [SkillNames.ADOBE]: {
+    id: 10,
+    name: "adobe",
+    label: "Adobe",
+    shortDescription: "Suite Adobe pour la création de supports visuels et présentations.",
+    color: "#FF0000",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg",
   },
 };
 
