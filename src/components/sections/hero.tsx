@@ -76,7 +76,7 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    Full-Stack Engineer
+                    Étudiant Ingénieur
                   </p>
                 </BlurIn>
               </div>
@@ -95,21 +95,14 @@ const HeroSection = () => {
   </BoxReveal>
 </Link>
                 <div className="md:self-start flex gap-3">
-                  <Tooltip delayDuration={300}>
-                    <TooltipTrigger asChild>
-                      <Link href={"#contact"}>
-                        <Button
-                          variant={"outline"}
-                          className="block w-full overflow-hidden"
-                        >
-                          Hire Me
-                        </Button>
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent side="bottom">
-                      <p>pls 🥹 🙏</p>
-                    </TooltipContent>
-                  </Tooltip>
+                  <Link href={"#contact"}>
+                    <Button
+                      variant={"outline"}
+                      className="block w-full overflow-hidden"
+                    >
+                      Hire Me
+                    </Button>
+                  </Link>
                   <div className="flex items-center h-full gap-2">
                     <Link
                       href={config.social.github}

@@ -16,9 +16,9 @@ function MainPage() {
       <AnimatedBackground />
       <main className={cn("bg-slate-100 dark:bg-transparent canvas-overlay-mode")}>
         <HeroSection />
-        <SkillsSection />
-        <ExperienceSection />
         <ProjectsSection />
+        <ExperienceSection />
+        <SkillsSection />
         <ContactSection />
       </main>
     </SmoothScroll>

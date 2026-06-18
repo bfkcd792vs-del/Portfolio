@@ -1,6 +1,6 @@
 "use client";
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import { Application, SPEObject, SplineEvent } from "@splinetool/runtime";
+import { Application, SplineEvent } from "@splinetool/runtime";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Spline = React.lazy(() => import("@splinetool/react-spline"));
@@ -11,7 +11,6 @@ import { usePreloader } from "./preloader";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { Section, getKeyboardState } from "./animated-background-config";
-import { useSounds } from "./realtime/hooks/use-sounds";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,10 +22,8 @@ const AnimatedBackground = () => {
   const [splineApp, setSplineApp] = useState<Application>();
   const selectedSkillRef = useRef<Skill | null>(null);
 
-  const { playPressSound, playReleaseSound } = useSounds();
-
-  const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
-  const [activeSection, setActiveSection] = useState<Section>("hero");
+const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+const [activeSection, setActiveSection] = useState<Section>("hero");
 
   // Animation controllers refs
   const keycapAnimationsRef = useRef<{ start: () => void; stop: () => void }>();
@@ -37,10 +34,10 @@ const AnimatedBackground = () => {
   // --- Event Handlers ---
 
   const handleMouseHover = (e: SplineEvent) => {
-    if (!splineApp || selectedSkillRef.current?.name === e.target.name) return;
+    const name = e.target.name.replace(/\s/g, " ").trim();
+    if (!splineApp || selectedSkillRef.current?.name === name) return;
 
-    if (e.target.name === "body" || e.target.name === "platform") {
-      if (selectedSkillRef.current) playReleaseSound();
+    if (name === "body" || name === "platform") {
       setSelectedSkill(null);
       selectedSkillRef.current = null;
       if (splineApp.getVariable("heading") && splineApp.getVariable("desc")) {
@@ -48,11 +45,9 @@ const AnimatedBackground = () => {
         splineApp.setVariable("desc", "");
       }
     } else {
-      if (!selectedSkillRef.current || selectedSkillRef.current.name !== e.target.name) {
-        const skill = SKILLS[e.target.name as SkillNames];
+      if (!selectedSkillRef.current || selectedSkillRef.current.name !== name) {
+        const skill = SKILLS[name as SkillNames];
         if (skill) {
-          if (selectedSkillRef.current) playReleaseSound();
-          playPressSound();
           setSelectedSkill(skill);
           selectedSkillRef.current = skill;
         }
@@ -75,7 +70,6 @@ const AnimatedBackground = () => {
 
     splineApp.addEventListener("keyUp", () => {
       if (!splineApp || isInputFocused()) return;
-      playReleaseSound();
       splineApp.setVariable("heading", "");
       splineApp.setVariable("desc", "");
     });
@@ -83,7 +77,6 @@ const AnimatedBackground = () => {
       if (!splineApp || isInputFocused()) return;
       const skill = SKILLS[e.target.name as SkillNames];
       if (skill) {
-        playPressSound();
         setSelectedSkill(skill);
         selectedSkillRef.current = skill;
         splineApp.setVariable("heading", skill.label);
@@ -141,9 +134,10 @@ const AnimatedBackground = () => {
     gsap.set(kbd.position, heroState.position);
 
     // Section transitions
-    createSectionTimeline("#skills", "skills", "hero");
-    createSectionTimeline("#projects", "projects", "skills", "top 70%");
-    createSectionTimeline("#contact", "contact", "projects", "top 30%");
+    createSectionTimeline("#projects", "projects", "hero");
+    createSectionTimeline("#experience", "experience", "projects");
+    createSectionTimeline("#skills", "skills", "experience");
+    createSectionTimeline("#contact", "contact", "skills", "top 30%");
   };
 
   const getKeycapsAnimation = () => {
@@ -196,9 +190,12 @@ const AnimatedBackground = () => {
     const kbd = splineApp.findObjectByName("keyboard");
     if (!kbd) return;
 
+    if (activeSection === "hero") {
+      kbd.visible = false;
+      return;
+    }
+
     kbd.visible = false;
-    await sleep(400);
-    kbd.visible = true;
     setKeyboardRevealed(true);
 
     const currentState = getKeyboardState({ section: activeSection, isMobile });
@@ -257,35 +254,22 @@ const AnimatedBackground = () => {
   // Handle keyboard text visibility based on theme and section
   useEffect(() => {
     if (!splineApp) return;
-    const textDesktopDark = splineApp.findObjectByName("text-desktop-dark");
-    const textDesktopLight = splineApp.findObjectByName("text-desktop");
-    const textMobileDark = splineApp.findObjectByName("text-mobile-dark");
-    const textMobileLight = splineApp.findObjectByName("text-mobile");
+    const tDD = splineApp.findObjectByName("text-desktop-dark");
+    const tDL = splineApp.findObjectByName("text-desktop");
+    const tMD = splineApp.findObjectByName("text-mobile-dark");
+    const tML = splineApp.findObjectByName("text-mobile");
 
-    if (!textDesktopDark || !textDesktopLight || !textMobileDark || !textMobileLight) return;
+    const show = (obj: any) => { if (obj) obj.visible = true; };
+    const hide = (obj: any) => { if (obj) obj.visible = false; };
 
-    const setVisibility = (
-      dDark: boolean,
-      dLight: boolean,
-      mDark: boolean,
-      mLight: boolean
-    ) => {
-      textDesktopDark.visible = dDark;
-      textDesktopLight.visible = dLight;
-      textMobileDark.visible = mDark;
-      textMobileLight.visible = mLight;
-    };
+    hide(tDD); hide(tDL); hide(tMD); hide(tML);
 
-    if (activeSection !== "skills") {
-      setVisibility(false, false, false, false);
-    } else if (theme === "dark") {
-      isMobile
-        ? setVisibility(false, false, false, true)
-        : setVisibility(false, true, false, false);
+    if (activeSection !== "skills") return;
+
+    if (theme === "dark") {
+      isMobile ? (tML ? show(tML) : show(tMD)) : (tDL ? show(tDL) : show(tDD));
     } else {
-      isMobile
-        ? setVisibility(false, false, true, false)
-        : setVisibility(true, false, false, false);
+      isMobile ? (tMD ? show(tMD) : show(tML)) : (tDD ? show(tDD) : show(tDL));
     }
   }, [theme, splineApp, isMobile, activeSection]);
 
@@ -334,6 +318,9 @@ const AnimatedBackground = () => {
     }
 
     const manageAnimations = async () => {
+      // Show/hide keyboard based on section
+      if (kbd) kbd.visible = activeSection !== "hero";
+
       // Reset text if not in skills
       if (activeSection !== "skills") {
         splineApp.setVariable("heading", "");
@@ -393,17 +380,6 @@ const AnimatedBackground = () => {
           scene="/assets/skills-keyboard.spline"
         />
       </Suspense>
-      {selectedSkill && (
-        <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 pointer-events-none">
-          <div className="bg-black/80 backdrop-blur-sm border border-white/10 rounded-xl px-6 py-4 text-center shadow-2xl min-w-[220px]">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <img src={selectedSkill.icon} alt={selectedSkill.label} className="w-5 h-5" />
-              <span className="text-white font-semibold text-sm">{selectedSkill.label}</span>
-            </div>
-            <p className="text-white/60 text-xs leading-relaxed">{selectedSkill.shortDescription}</p>
-          </div>
-        </div>
-      )}
     </>
   );
 };
