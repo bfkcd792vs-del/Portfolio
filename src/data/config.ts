@@ -1,9 +1,9 @@
 const config = {
   title: "Victor Feneis | Ingénieur Génie Industriel & Supply Chain",
   description: {
-    long: "Portfolio de Victor Feneis, étudiant ingénieur à l'École des Mines de Nancy, spécialisé en gestion industrielle, supply chain et analyse de données. Expériences chez Stellantis (R&D) et G&F Châtelain – Chanel (Transformation Achats). Passionné d'automatisation et de pilotage par la donnée.",
+    long: "Engineering student at Mines Nancy (Industrial Engineering & Materials), interested in logistics and shopfloor process improvement. I enjoy mapping material flows, identifying risks that could impact quality, and turning observations into practical actions with production and logistics teams.",
     short:
-      "Victor Feneis — Ingénieur Génie Industriel, orienté Supply Chain, Achats et Data.",
+      "Victor Feneis — Industrial Engineering student at Mines Nancy, focused on Supply Chain and Operations.",
   },
   keywords: [
     "Victor Feneis",
