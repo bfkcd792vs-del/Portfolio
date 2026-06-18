@@ -84,18 +84,22 @@ const HeroSection = () => {
               </div>
               <div className="mt-8 flex flex-col gap-3 w-fit">
                
-             <Link
-  href="/assets/CV_Victor_Feneis.pdf"
-  target="_blank"
-  className="flex-1"
->
-  <BoxReveal delay={2} width="100%">
-    <Button className="flex items-center gap-2 w-full">
-      <File size={24} />
-      <p>{t.hero.resume}</p>
-    </Button>
-  </BoxReveal>
-</Link>
+              <BoxReveal delay={2} width="100%">
+                  <div className="flex gap-3">
+                    <a href="/assets/CV_Victor_Feneis_FR.pdf" download="CV_Victor_Feneis_FR.pdf" className="flex-1">
+                      <Button className="flex items-center gap-2 w-full">
+                        <File size={18} />
+                        CV
+                      </Button>
+                    </a>
+                    <a href="/assets/CV_Victor_Feneis_EN.pdf" download="CV_Victor_Feneis_EN.pdf" className="flex-1">
+                      <Button variant={"outline"} className="flex items-center gap-2 w-full">
+                        <File size={18} />
+                        Resume
+                      </Button>
+                    </a>
+                  </div>
+                </BoxReveal>
                 <div className="md:self-start flex gap-3">
                   <Link href={"#contact"}>
                     <Button
