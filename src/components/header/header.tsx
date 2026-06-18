@@ -6,12 +6,15 @@ import { cn } from "@/lib/utils";
 import FunnyThemeToggle from "../theme/funny-theme-toggle";
 import { Button } from "../ui/button";
 import { config } from "@/data/config";
+import { useLanguage } from "@/contexts/language";
 
 interface HeaderProps {
   loader?: boolean;
 }
 
 const Header = ({ loader }: HeaderProps) => {
+  const { lang, setLang } = useLanguage();
+
   return (
     <motion.header
       className={cn(
@@ -32,7 +35,33 @@ const Header = ({ loader }: HeaderProps) => {
             {config.author}
           </Button>
         </Link>
-        <FunnyThemeToggle className="w-6 h-6 mr-4 hidden md:flex" />
+        <div className="flex items-center gap-3">
+          <FunnyThemeToggle className="w-6 h-6 hidden md:flex" />
+          <div className="flex items-center border border-border rounded-md overflow-hidden text-sm font-mono">
+            <button
+              onClick={() => setLang("fr")}
+              className={cn(
+                "px-3 py-1 transition-colors",
+                lang === "fr"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              FR
+            </button>
+            <button
+              onClick={() => setLang("en")}
+              className={cn(
+                "px-3 py-1 transition-colors",
+                lang === "en"
+                  ? "bg-primary text-primary-foreground"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              EN
+            </button>
+          </div>
+        </div>
       </div>
     </motion.header>
   );

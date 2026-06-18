@@ -13,11 +13,13 @@ import { BlurIn, BoxReveal } from "../reveal-animations";
 import ScrollDownIcon from "../scroll-down-icon";
 import { SiLinkedin, SiGmail } from "react-icons/si";
 import { config } from "@/data/config";
+import { useLanguage } from "@/contexts/language";
 
 import SectionWrapper from "../ui/section-wrapper";
 
 const HeroSection = () => {
   const { isLoading } = usePreloader();
+  const { t } = useLanguage();
 
   return (
     <SectionWrapper id="hero" className={cn("relative w-full h-screen")}>
@@ -40,7 +42,7 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    Hi, I am
+                    {t.hero.greeting}
                     <br className="md:hidden" />
                   </p>
                 </BlurIn>
@@ -76,7 +78,7 @@ const HeroSection = () => {
                       "cursor-default font-display sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
                     )}
                   >
-                    Industrial Engineering & Supply Chain
+                    {t.hero.subtitle}
                   </p>
                 </BlurIn>
               </div>
@@ -90,7 +92,7 @@ const HeroSection = () => {
   <BoxReveal delay={2} width="100%">
     <Button className="flex items-center gap-2 w-full">
       <File size={24} />
-      <p>Resume</p>
+      <p>{t.hero.resume}</p>
     </Button>
   </BoxReveal>
 </Link>
@@ -100,7 +102,7 @@ const HeroSection = () => {
                       variant={"outline"}
                       className="block w-full overflow-hidden"
                     >
-                      Hire Me
+                      {t.hero.hireMe}
                     </Button>
                   </Link>
                   <div className="flex items-center h-full gap-2">
