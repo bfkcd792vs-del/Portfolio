@@ -27,7 +27,7 @@ const HeroSection = () => {
             "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
             "col-span-1",
             "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "pt-28 sm:pb-16 md:p-20 lg:p-24 xl:p-28"
+            "pt-16 sm:pb-8 md:p-10 lg:p-12 xl:p-14"
           )}
         >
           {!isLoading && (
@@ -51,7 +51,7 @@ const HeroSection = () => {
                       <h1
                         className={cn(
                           "-ml-[6px] leading-none font-thin text-transparent text-slate-800 text-left",
-                          "font-thin text-7xl md:text-7xl lg:text-8xl xl:text-9xl",
+                          "font-thin text-4xl md:text-5xl lg:text-6xl xl:text-7xl",
                           "cursor-default text-edge-outline font-display "
                         )}
                       >
