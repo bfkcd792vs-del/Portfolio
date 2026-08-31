@@ -101,14 +101,6 @@ const HeroSection = () => {
                   </div>
                 </BoxReveal>
                 <div className="md:self-start flex gap-3">
-                  <Link href={"#contact"}>
-                    <Button
-                      variant={"outline"}
-                      className="block w-full overflow-hidden"
-                    >
-                      {t.hero.hireMe}
-                    </Button>
-                  </Link>
                   <div className="flex items-center h-full gap-2">
                     <Link
                       href={config.social.linkedin}

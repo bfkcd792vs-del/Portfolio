@@ -137,7 +137,6 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
     createSectionTimeline("#projects", "projects", "hero");
     createSectionTimeline("#experience", "experience", "projects");
     createSectionTimeline("#skills", "skills", "experience");
-    createSectionTimeline("#contact", "contact", "skills", "top 30%");
   };
 
   const getKeycapsAnimation = () => {
