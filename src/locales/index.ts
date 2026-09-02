@@ -13,8 +13,8 @@ export const translations = {
       entries: [
         {
           id: 1,
-          startDate: "Sep 2025",
-          endDate: "Fév 2026",
+          startDate: "Avr 2026",
+          endDate: "Août 2026",
           title: "Stage Transformation Achats",
           company: "G&F Châtelain – Chanel Horlogerie & Joaillerie",
           description: [
@@ -89,8 +89,8 @@ export const translations = {
       entries: [
         {
           id: 1,
-          startDate: "Sep 2025",
-          endDate: "Feb 2026",
+          startDate: "Apr 2026",
+          endDate: "Aug 2026",
           title: "Purchasing Transformation Intern",
           company: "G&F Châtelain – Chanel Watchmaking & Jewelry",
           description: [
