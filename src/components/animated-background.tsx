@@ -135,7 +135,7 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
 
     // Section transitions
     createSectionTimeline("#about", "about", "hero");
-    createSectionTimeline("#projects", "projects", "about");
+    createSectionTimeline("#projects", "projects", "about", "top 10%");
     createSectionTimeline("#experience", "experience", "projects");
     createSectionTimeline("#skills", "skills", "experience");
   };
@@ -190,7 +190,7 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
     const kbd = splineApp.findObjectByName("keyboard");
     if (!kbd) return;
 
-    if (activeSection === "hero") {
+    if (activeSection === "hero" || activeSection === "about") {
       kbd.visible = false;
       return;
     }
@@ -319,7 +319,7 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
 
     const manageAnimations = async () => {
       // Show/hide keyboard based on section
-      if (kbd) kbd.visible = activeSection !== "hero";
+      if (kbd) kbd.visible = activeSection !== "hero" && activeSection !== "about";
 
       // Reset text if not in skills
       if (activeSection !== "skills") {
