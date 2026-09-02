@@ -135,7 +135,30 @@ const HeroSection = () => {
             </div>
           )}
         </div>
-        <div className="grid col-span-1"></div>
+        <div className="hidden md:grid col-span-1 relative">
+          <div
+            data-lenis-prevent
+            className={cn(
+              "absolute top-1/2 -translate-y-1/2 z-[2]",
+              "md:left-[4%] md:w-[92%]",
+              "h-[70%] max-h-[520px] overflow-y-auto",
+              "rounded-xl border border-white/10 bg-black/30 backdrop-blur-sm",
+              "p-6",
+              "[scrollbar-width:thin]"
+            )}
+          >
+            <div className="flex flex-col gap-4">
+              {t.about.paragraphs.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-sm leading-relaxed text-zinc-400"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
       <div className="absolute bottom-10 left-[50%] translate-x-[-50%]">
         <ScrollDownIcon />
