@@ -25,6 +25,8 @@ import {
   SiFastapi,
   SiRedis,
   SiRaspberrypi,
+  SiMicrosoftaccess,
+  SiVisualbasic,
 } from "react-icons/si";
 import { SiGo } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
@@ -190,6 +192,18 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
     fg: "white",
     icon: <SiRaspberrypi />,
   },
+  access: {
+    title: "Microsoft Access",
+    bg: "black",
+    fg: "white",
+    icon: <SiMicrosoftaccess />,
+  },
+  vba: {
+    title: "VBA",
+    bg: "black",
+    fg: "white",
+    icon: <SiVisualbasic />,
+  },
 };
 
 
@@ -243,6 +257,45 @@ const projects: Project[] = [
         <p className="text-neutral-500 dark:text-neutral-500 italic">
           Projet en cours — README, schéma de câblage et code seront publiés
           sur GitHub une fois les tests moteur et vision validés.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: "reach-tournament-manager",
+    category: "Base de données",
+    title: "Gestionnaire de tournois — Reach",
+    src: `${BASE_PATH}/reach-tournament-manager/1.png`,
+    screenshots: ["1.png"],
+    live: "#",
+    skills: {
+      frontend: [],
+      backend: [PROJECT_SKILLS.access, PROJECT_SKILLS.vba],
+    },
+    content: (
+      <div className="text-sm md:text-base text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto space-y-4">
+        <p>
+          Conception et développement, en binôme, d&apos;un système de
+          gestion de tournois pour un jeu de cartes stratégique sous
+          Microsoft Access. Le projet couvre le cycle complet : modélisation
+          entité-relation (joueurs, saisons, tournois, classements,
+          performances), passage au modèle relationnel, puis développement
+          d&apos;une interface de gestion complète.
+        </p>
+        <p>
+          Le modèle gère des relations many-to-many complexes — un joueur
+          peut s&apos;inscrire à plusieurs tournois, être classé sur
+          plusieurs saisons, avoir des performances par tournoi — via des
+          tables d&apos;association dédiées.
+        </p>
+        <p>
+          Fonctionnalités clés : inscription des joueurs et des tournois via
+          formulaires dynamiques (menus déroulants filtrés en cascade),
+          consultation des classements par saison et par tournoi, espace
+          administrateur protégé par mot de passe pour valider les
+          inscriptions et saisir les résultats, et sécurisation des saisies
+          via macros (validation des champs, blocage des entrées
+          incomplètes ou parasites).
         </p>
       </div>
     ),
