@@ -213,7 +213,6 @@ export type Project = {
   title: string;
   src: string;
   screenshots: string[];
-  live: string;
   github?: string;
   skills: {
     frontend: Skill[];
@@ -229,7 +228,6 @@ const projects: Project[] = [
     title: "Caméra suiveuse de visage (Pan/Tilt)",
     src: `${BASE_PATH}/pantilt-face-tracker/1.png`,
     screenshots: ["1.png"],
-    live: "#",
     skills: {
       frontend: [],
       backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.opencv, PROJECT_SKILLS.raspberrypi],
@@ -267,7 +265,6 @@ const projects: Project[] = [
     title: "Gestionnaire de tournois — Reach",
     src: `${BASE_PATH}/reach-tournament-manager/1.png`,
     screenshots: ["1.png"],
-    live: "#",
     skills: {
       frontend: [],
       backend: [PROJECT_SKILLS.access, PROJECT_SKILLS.vba],
