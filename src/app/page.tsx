@@ -8,6 +8,7 @@ import SkillsSection from "@/components/sections/skills";
 import ExperienceSection from "@/components/sections/experience";
 import ProjectsSection from "@/components/sections/projects";
 import HeroSection from "@/components/sections/hero";
+import AboutSection from "@/components/sections/about";
 
 function MainPage() {
   return (
@@ -15,6 +16,7 @@ function MainPage() {
       <AnimatedBackground />
       <main className={cn("bg-slate-100 dark:bg-transparent canvas-overlay-mode")}>
         <HeroSection />
+        <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
         <SkillsSection />

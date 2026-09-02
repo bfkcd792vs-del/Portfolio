@@ -134,7 +134,8 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
     gsap.set(kbd.position, heroState.position);
 
     // Section transitions
-    createSectionTimeline("#projects", "projects", "hero");
+    createSectionTimeline("#about", "about", "hero");
+    createSectionTimeline("#projects", "projects", "about");
     createSectionTimeline("#experience", "experience", "projects");
     createSectionTimeline("#skills", "skills", "experience");
   };
