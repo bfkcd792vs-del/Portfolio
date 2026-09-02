@@ -24,6 +24,7 @@ import {
   SiSolidity,
   SiFastapi,
   SiRedis,
+  SiRaspberrypi,
 } from "react-icons/si";
 import { SiGo } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
@@ -183,6 +184,12 @@ export const PROJECT_SKILLS: Record<string, Skill> = {
     fg: "white",
     icon: <SiSupabase />,
   },
+  raspberrypi: {
+    title: "Raspberry Pi",
+    bg: "black",
+    fg: "white",
+    icon: <SiRaspberrypi />,
+  },
 };
 
 
@@ -201,6 +208,45 @@ export type Project = {
   content: ReactNode;
 };
 
-const projects: Project[] = [];
+const projects: Project[] = [
+  {
+    id: "pantilt-face-tracker",
+    category: "Robotique embarquée",
+    title: "Caméra suiveuse de visage (Pan/Tilt)",
+    src: `${BASE_PATH}/pantilt-face-tracker/1.png`,
+    screenshots: ["1.png"],
+    live: "#",
+    skills: {
+      frontend: [],
+      backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.opencv, PROJECT_SKILLS.raspberrypi],
+    },
+    content: (
+      <div className="text-sm md:text-base text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto space-y-4">
+        <p>
+          Une caméra pan/tilt sur Raspberry Pi Zero 2W qui détecte un visage
+          dans le flux vidéo et pilote deux moteurs pas à pas pour le
+          recentrer en continu, sans interface graphique (headless, SSH).
+        </p>
+        <p>
+          Contrainte principale : 512 Mo de RAM sans GPU, donc pas de modèle
+          lourd type YOLO — détection par cascade Haar/LBP OpenCV en 320×240,
+          avec un fallback DNN léger prévu pour les cas difficiles.
+        </p>
+        <p>
+          Le pilotage des moteurs 28BYJ-48 impose un délai d&apos;environ 1 ms
+          entre chaque pas, incompatible avec la boucle de capture vidéo :
+          l&apos;architecture sépare donc un thread dédié au contrôle moteur
+          (asservissement proportionnel sur l&apos;erreur en pixels, zone
+          morte et lissage pour éviter le tremblement) de la boucle de
+          vision, qui ne fait qu&apos;écrire la consigne de position.
+        </p>
+        <p className="text-neutral-500 dark:text-neutral-500 italic">
+          Projet en cours — README, schéma de câblage et code seront publiés
+          sur GitHub une fois les tests moteur et vision validés.
+        </p>
+      </div>
+    ),
+  },
+];
 
 export default projects;
