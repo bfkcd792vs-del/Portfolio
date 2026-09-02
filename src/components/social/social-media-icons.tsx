@@ -3,16 +3,11 @@
 import { useInView } from "framer-motion";
 import React, { useRef } from "react";
 import { Button } from "../ui/button";
-import { SiGithub, SiLinkedin } from "react-icons/si";
+import { SiLinkedin } from "react-icons/si";
 import { config } from "@/data/config";
 import Link from "next/link";
 
 const BUTTONS = [
-  {
-    name: "Github",
-    href: config.social.github,
-    icon: <SiGithub size={"24"} color={"#fff"} />,
-  },
   {
     name: "LinkedIn",
     href: config.social.linkedin,
