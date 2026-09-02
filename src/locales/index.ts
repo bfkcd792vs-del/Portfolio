@@ -2,7 +2,8 @@ export const translations = {
   fr: {
     hero: {
       greeting: "Bonjour, je suis",
-      subtitle: "Génie Industriel & Supply Chain",
+      subtitle: "Étudiant en Génie Industriel & Matériaux",
+      tagline: "Appétence pour l'industrie et la gestion de projets",
       hireMe: "Me contacter",
       resume: "CV",
     },
@@ -77,7 +78,8 @@ export const translations = {
   en: {
     hero: {
       greeting: "Hi, I am",
-      subtitle: "Industrial Engineering & Supply Chain",
+      subtitle: "Industrial Engineering & Materials Student",
+      tagline: "Passionate about industry and project management",
       hireMe: "Hire Me",
       resume: "Resume",
     },

@@ -81,6 +81,16 @@ const HeroSection = () => {
                     {t.hero.subtitle}
                   </p>
                 </BlurIn>
+                <BlurIn delay={1.4}>
+                  <p
+                    className={cn(
+                      "md:self-start mt-1 font-thin text-sm text-slate-400 dark:text-zinc-500",
+                      "cursor-default font-display sm:text-base md:text-base"
+                    )}
+                  >
+                    {t.hero.tagline}
+                  </p>
+                </BlurIn>
               </div>
               <div className="mt-8 flex flex-col gap-3 w-fit">
                
