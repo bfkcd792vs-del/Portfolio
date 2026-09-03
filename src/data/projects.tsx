@@ -297,6 +297,36 @@ const projects: Project[] = [
       </div>
     ),
   },
+  {
+    id: "portfolio-website",
+    category: "Développement web",
+    title: "Portfolio personnel (ce site)",
+    src: `${BASE_PATH}/portfolio-website/1.png`,
+    screenshots: ["1.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.next, PROJECT_SKILLS.typescript, PROJECT_SKILLS.tailwind, PROJECT_SKILLS.framer],
+      backend: [],
+    },
+    content: (
+      <div className="text-sm md:text-base text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto space-y-4">
+        <p>
+          Le site que vous êtes en train de consulter. Développé avec Next.js
+          (App Router) et TypeScript, mis en forme avec Tailwind CSS et
+          shadcn/ui, animé avec Framer Motion, et intégrant une scène 3D
+          interactive (le clavier de compétences) réalisée sous Spline.
+        </p>
+        <p>
+          Construit par itérations successives — structure des sections,
+          contenu, animations, corrections — avec un coup de main ponctuel de
+          Claude Code sur certaines de ces itérations.
+        </p>
+        <p>
+          Déployé sur Vercel, avec redéploiement automatique à chaque mise à
+          jour du code.
+        </p>
+      </div>
+    ),
+  },
 ];
 
 export default projects;
