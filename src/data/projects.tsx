@@ -241,7 +241,7 @@ const projects: Project[] = [
         </p>
         <p>
           Contrainte principale : 512 Mo de RAM sans GPU, donc pas de modèle
-          lourd type YOLO — détection par cascade Haar/LBP OpenCV en 320×240,
+          lourd type YOLO. Détection par cascade Haar/LBP OpenCV en 320×240,
           avec un fallback DNN léger prévu pour les cas difficiles.
         </p>
         <p>
@@ -253,7 +253,7 @@ const projects: Project[] = [
           vision, qui ne fait qu&apos;écrire la consigne de position.
         </p>
         <p className="text-neutral-500 dark:text-neutral-500 italic">
-          Projet en cours — README, schéma de câblage et code seront publiés
+          Projet en cours : README, schéma de câblage et code seront publiés
           sur GitHub une fois les tests moteur et vision validés.
         </p>
       </div>
@@ -262,7 +262,7 @@ const projects: Project[] = [
   {
     id: "reach-tournament-manager",
     category: "Base de données",
-    title: "Gestionnaire de tournois — Reach",
+    title: "Gestionnaire de tournois Reach",
     src: `${BASE_PATH}/reach-tournament-manager/1.png`,
     screenshots: ["1.png"],
     skills: {
@@ -280,9 +280,9 @@ const projects: Project[] = [
           d&apos;une interface de gestion complète.
         </p>
         <p>
-          Le modèle gère des relations many-to-many complexes — un joueur
+          Le modèle gère des relations many-to-many complexes (un joueur
           peut s&apos;inscrire à plusieurs tournois, être classé sur
-          plusieurs saisons, avoir des performances par tournoi — via des
+          plusieurs saisons, avoir des performances par tournoi) via des
           tables d&apos;association dédiées.
         </p>
         <p>
@@ -316,8 +316,8 @@ const projects: Project[] = [
           interactive (le clavier de compétences) réalisée sous Spline.
         </p>
         <p>
-          Construit par itérations successives — structure des sections,
-          contenu, animations, corrections — avec un coup de main ponctuel de
+          Construit par itérations successives (structure des sections,
+          contenu, animations, corrections), avec un coup de main ponctuel de
           Claude Code sur certaines de ces itérations.
         </p>
         <p>
