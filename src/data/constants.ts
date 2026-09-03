@@ -3,7 +3,7 @@
 ========================= */
 
 export enum SkillNames {
-  POWERBI = "Power Bi",
+  POWERBI = "Power BI",
   EXCEL = "Excel",
   SQL = "SQL",
   PYTHON = "Python",
@@ -21,8 +21,8 @@ export enum SkillNames {
   ERP = "ERP",
   CURA = "Cura",
   VESTA = "VESTA",
-  DOCKER = "Docker",
-  MICROSOFT = "microsoft",
+  DOCKER = "docker",
+  MICROSOFT = "Microsoft",
   POWERPOINT = "PowePoint",
   VISIO = "Visio",
   ADOBE = "Adobe",
@@ -41,7 +41,7 @@ export type Skill = {
 export const SKILLS: Record<SkillNames, Skill> = {
   [SkillNames.POWERBI]: {
     id: 1,
-    name: "Power Bi",
+    name: "Power BI",
     label: "Power BI",
     shortDescription: "Interactive dashboards & business reporting.",
     color: "#F2C811",
@@ -185,7 +185,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
   },
   [SkillNames.DOCKER]: {
     id: 19,
-    name: "Docker",
+    name: "docker",
     label: "Docker",
     shortDescription: "Containerized deployment.",
     color: "#2496ed",
@@ -193,7 +193,7 @@ export const SKILLS: Record<SkillNames, Skill> = {
   },
   [SkillNames.MICROSOFT]: {
     id: 20,
-    name: "microsoft",
+    name: "Microsoft",
     label: "Microsoft",
     shortDescription: "Windows & Office 365 ecosystem.",
     color: "#00A4EF",
