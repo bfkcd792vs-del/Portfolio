@@ -250,8 +250,8 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     id: 1,
-    startDate: "Sep 2025",
-    endDate: "Fév 2026",
+    startDate: "Avr 2026",
+    endDate: "Août 2026",
     title: "Stage Transformation Achats",
     company: "G&F Châtelain – Chanel Horlogerie & Joaillerie",
     description: [
