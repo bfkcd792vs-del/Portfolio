@@ -1,9 +1,9 @@
 const config = {
-  title: "Victor Feneis | Ingénieur Génie Industriel & Supply Chain",
+  title: "Victor Feneis | Élève-ingénieur Mines Nancy : transformation industrielle & IA",
   description: {
-    long: "Engineering student at Mines Nancy (Industrial Engineering & Materials), interested in logistics and shopfloor process improvement. I enjoy mapping material flows, identifying risks that could impact quality, and turning observations into practical actions with production and logistics teams.",
+    long: "Élève-ingénieur à Mines Nancy (Génie Industriel & Matériaux) et en double diplôme management à l'IAE Nancy. À la recherche d'un stage de fin d'études ou d'un VIE à partir du 22 mars 2027, Suisse romande en priorité. Transformation industrielle, performance opérationnelle, supply chain et IA appliquée à l'industrie.",
     short:
-      "Victor Feneis — Industrial Engineering student at Mines Nancy, focused on Supply Chain and Operations.",
+      "Victor Feneis, élève-ingénieur Mines Nancy : transformation industrielle, performance opérationnelle et IA. Stage de fin d'études / VIE dès le 22 mars 2027.",
   },
   keywords: [
     "Victor Feneis",
@@ -21,7 +21,14 @@ const config = {
     "sql",
     "excel",
     "automatisation",
-    "docker",
+    "stage fin d'études 2027",
+    "VIE",
+    "transformation industrielle",
+    "amélioration continue",
+    "suisse romande",
+    "lean yellow belt",
+    "arena simulation",
+    "visual promethee",
   ],
   author: "Victor Feneis",
   email: "victor.feneis@gmail.com",
