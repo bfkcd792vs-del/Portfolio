@@ -327,6 +327,69 @@ const projects: Project[] = [
       </div>
     ),
   },
+  {
+    id: "henryot-planning",
+    category: "Projet industriel",
+    title: "Outils de planification d&apos;atelier (projet industriel)",
+    src: `${BASE_PATH}/henryot-planning/1.png`,
+    screenshots: ["1.png"],
+    skills: {
+      frontend: [],
+      backend: [],
+    },
+    content: (
+      <div className="text-sm md:text-base text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto space-y-4">
+        <p>
+          Projet industriel de Mines Nancy mené en équipe de trois (2026-2027, en cours) pour une entreprise industrielle partenaire : concevoir des outils de planification d&apos;atelier.
+        </p>
+        <p>
+          Mon fil conducteur : un outil doit rester viable et efficace dans la durée, sans ajouter de complexité pour ceux qui l&apos;utilisent au quotidien.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: "kalypso-simulation",
+    category: "Simulation d&apos;entreprise",
+    title: "Kalypso, simulation de gestion d&apos;entreprise",
+    src: `${BASE_PATH}/kalypso-simulation/1.png`,
+    screenshots: ["1.png"],
+    skills: {
+      frontend: [],
+      backend: [],
+    },
+    content: (
+      <div className="text-sm md:text-base text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto space-y-4">
+        <p>
+          Simulation d&apos;entreprise à Mines Nancy (2026) : une équipe de quatre dirige un fabricant de coques de bateaux et prend ses décisions de gestion tour après tour.
+        </p>
+        <p>
+          J&apos;y tiens la direction administrative et financière : emprunts, trésorerie, investissements et assurances. J&apos;ai construit un modèle de prévision sous Excel pour simuler chaque décision avant de la valider.
+        </p>
+      </div>
+    ),
+  },
+  {
+    id: "pipeline-stages",
+    category: "IA &amp; automatisation",
+    title: "Pipeline de recherche et de suivi de stages",
+    src: `${BASE_PATH}/pipeline-stages/1.png`,
+    screenshots: ["1.png"],
+    skills: {
+      frontend: [],
+      backend: [],
+    },
+    content: (
+      <div className="text-sm md:text-base text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto space-y-4">
+        <p>
+          Un système agentique construit avec Claude Code et un coffre Obsidian, qui trouve les offres de stage, les note selon mes critères et suit leur avancement.
+        </p>
+        <p>
+          Je lui confie une tâche, je corrige sa sortie, et il comprend peu à peu ce que je veux, comme un modèle entraîné par mes corrections, jusqu&apos;à ce que ses notes rejoignent mon propre jugement. Mon intérêt : savoir quelles tâches déléguer à l&apos;IA et lesquelles exigent encore l&apos;expertise humaine.
+        </p>
+      </div>
+    ),
+  },
 ];
 
 export default projects;
