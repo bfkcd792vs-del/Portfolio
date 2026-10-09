@@ -74,8 +74,8 @@ export const SKILLS: Record<SkillNames, Skill> = {
   [SkillNames.POWER_AUTOMATE]: {
     id: 5,
     name: "Power Automate",
-    label: "Power Automate",
-    shortDescription: "Workflow automation & Office 365 integrations.",
+    label: "Automate",
+    shortDescription: "Power Automate workflows & Office 365.",
     color: "#0066FF",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
   },
