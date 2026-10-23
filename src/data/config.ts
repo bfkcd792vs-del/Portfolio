@@ -32,7 +32,7 @@ const config = {
   ],
   author: "Victor Feneis",
   email: "victor.feneis@gmail.com",
-  site: "https://github.com/bfkcd792vs-del/Portfolio",
+  site: "https://victorfeneis.com",
   githubUsername: "bfkcd792vs-del",
   githubRepo: "Portfolio",
 

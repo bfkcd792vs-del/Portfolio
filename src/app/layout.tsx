@@ -8,8 +8,37 @@ import Footer from "@/components/footer/footer";
 import Script from "next/script";
 import AppOverlays from "@/components/app-overlays";
 import { Providers } from "@/components/providers";
+import { Analytics } from "@vercel/analytics/react";
+
+// Données structurées pour Google (fiche personne)
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: config.author,
+  url: config.site,
+  email: `mailto:${config.email}`,
+  jobTitle: "Élève-ingénieur en Génie Industriel & Matériaux",
+  description: config.description.short,
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Mines Nancy" },
+    { "@type": "CollegeOrUniversity", name: "IAE Nancy" },
+  ],
+  knowsAbout: [
+    "Génie industriel",
+    "Supply chain",
+    "Lean Manufacturing",
+    "Planification de production",
+    "Power BI",
+    "Python",
+    "Intelligence artificielle appliquée à l'industrie",
+  ],
+  knowsLanguage: ["fr", "en"],
+  sameAs: [config.social.linkedin, config.social.github],
+};
 
 export const metadata: Metadata = {
+  metadataBase: new URL(config.site),
+  alternates: { canonical: "/" },
   title: config.title,
   description: config.description.long,
   keywords: config.keywords,
@@ -57,14 +86,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, archivoBlack.variable, "font-display"].join(" ")} suppressHydrationWarning>
+    <html lang="fr" className={[inter.variable, archivoBlack.variable, "font-display"].join(" ")} suppressHydrationWarning>
       <head>
         <Script
           defer
           src={process.env.UMAMI_DOMAIN}
           data-website-id={process.env.UMAMI_SITE_ID}
         ></Script>
-        {/* <Analytics /> */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
       <body>
         <Providers>
@@ -73,6 +105,7 @@ export default function RootLayout({
           <Footer />
           <AppOverlays />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

@@ -11,6 +11,7 @@ import { usePreloader } from "./preloader";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { Section, getKeyboardState } from "./animated-background-config";
+import { useLanguage } from "@/contexts/language";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,13 @@ const AnimatedBackground = () => {
   const { isLoading, bypassLoading } = usePreloader();
   const { theme } = useTheme();
   const isMobile = useMediaQuery("(max-width: 767px)");
+  const { lang } = useLanguage();
+  const langRef = useRef(lang);
+  langRef.current = lang;
+  const skillHeading = (skill: Skill) =>
+    langRef.current === "fr" ? skill.labelFr ?? skill.label : skill.label;
+  const skillDesc = (skill: Skill) =>
+    langRef.current === "fr" ? skill.shortDescriptionFr : skill.shortDescription;
   const splineContainer = useRef<HTMLDivElement>(null);
   const [splineApp, setSplineApp] = useState<Application>();
   const selectedSkillRef = useRef<Skill | null>(null);
@@ -29,6 +37,14 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
   const keycapAnimationsRef = useRef<{ start: () => void; stop: () => void }>();
 
   const [keyboardRevealed, setKeyboardRevealed] = useState(false);
+  // Sur mobile, la scène 3D (≈1,2 Mo) n'est pas chargée : null tant qu'on ne sait pas
+  const [load3D, setLoad3D] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 768px)").matches;
+    setLoad3D(desktop);
+    if (!desktop) bypassLoading();
+  }, []);
   const router = useRouter();
 
   // --- Event Handlers ---
@@ -79,8 +95,8 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
       if (skill) {
         setSelectedSkill(skill);
         selectedSkillRef.current = skill;
-        splineApp.setVariable("heading", skill.label);
-        splineApp.setVariable("desc", skill.shortDescription);
+        splineApp.setVariable("heading", skillHeading(skill));
+        splineApp.setVariable("desc", skillDesc(skill));
       }
     });
     splineApp.addEventListener("mouseHover", handleMouseHover);
@@ -276,9 +292,9 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
   useEffect(() => {
     if (!selectedSkill || !splineApp) return;
     // console.log(selectedSkill)
-    splineApp.setVariable("heading", selectedSkill.label);
-    splineApp.setVariable("desc", selectedSkill.shortDescription);
-  }, [selectedSkill]);
+    splineApp.setVariable("heading", skillHeading(selectedSkill));
+    splineApp.setVariable("desc", skillDesc(selectedSkill));
+  }, [selectedSkill, lang]);
 
   // Handle rotation and teardown animations based on active section
   useEffect(() => {
@@ -367,9 +383,11 @@ const [activeSection, setActiveSection] = useState<Section>("hero");
     updateKeyboardTransform();
   }, [splineApp, isLoading, activeSection]);
 
+  if (!load3D) return null;
+
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={null}>
         <Spline
           className="w-full h-full fixed"
           ref={splineContainer}

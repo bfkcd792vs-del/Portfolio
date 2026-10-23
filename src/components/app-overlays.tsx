@@ -4,6 +4,7 @@ import Particles from "@/components/Particles";
 import RemoteCursors from "@/components/realtime/remote-cursors";
 import EasterEggs from "@/components/easter-eggs";
 import ElasticCursor from "@/components/ui/ElasticCursor";
+import AvailabilityBadge from "@/components/availability-badge";
 
 export default function AppOverlays() {
   return (
@@ -15,6 +16,7 @@ export default function AppOverlays() {
       <RemoteCursors />
       <EasterEggs />
       <ElasticCursor />
+      <AvailabilityBadge />
     </>
   );
 }

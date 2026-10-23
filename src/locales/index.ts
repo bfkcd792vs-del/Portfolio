@@ -2,17 +2,17 @@ export const translations = {
   fr: {
     hero: {
       greeting: "Bonjour, je suis",
-      subtitle: "Étudiant en Génie Industriel & Matériaux",
-      tagline: "Stage de fin d'études / VIE dès le 22 mars 2027 · Suisse romande en priorité",
+      subtitle: "Étudiant en Génie Industriel & Matériaux · Double diplôme en Management et Administration des Entreprises",
+      tagline: "Recherche de stage à partir du 22 mars 2027",
       hireMe: "Me contacter",
       resume: "CV",
     },
     about: {
       title: "À propos",
       paragraphs: [
-        "Élève-ingénieur à Mines Nancy (Génie Industriel & Matériaux) et en double diplôme management à l'IAE Nancy, je cherche un stage de fin d'études ou un VIE à partir du 22 mars 2027, en Suisse romande en priorité. Ce qui m'attire : la transformation industrielle, la performance opérationnelle et l'IA appliquée à l'industrie.",
+        "Élève-ingénieur à Mines Nancy (Génie Industriel & Matériaux) et en double diplôme Management et Administration des Entreprises à l'IAE Nancy, je cherche un stage de fin d'études ou un VIE d'au moins 25 semaines à partir du 22 mars 2027, en Suisse romande en priorité. Ce qui m'attire : la transformation industrielle, la performance opérationnelle et l'IA appliquée à l'industrie.",
         "Tout a commencé dans le garage familial. Enfant, puis apprenti, j'ai grandi entre les capots ouverts et les diagnostics de pannes, dans un univers où chaque problème a une cause qu'il faut comprendre avant de la résoudre. C'est là, en réparant des voitures aux côtés de mon père, que j'ai pris goût au travail bien fait, mais surtout à autre chose : comprendre comment un garage tourne, comment on gère des stocks, des clients, des priorités. Le geste technique m'intéressait, mais c'est la mécanique invisible derrière, l'organisation, les flux, les systèmes, qui m'a vraiment happé.",
-        "Cette intuition m'a poussé à changer de trajectoire. Après un BTS en apprentissage, j'ai choisi une prépa ATS pour pousser plus loin mes connaissances théoriques et me donner les moyens de viser plus haut, avant de rejoindre Mines Nancy en Génie Industriel & Matériaux. J'ai voulu comprendre les systèmes à toutes les échelles : celle d'une pièce mécanique, celle d'une chaîne d'approvisionnement, celle d'une entreprise entière. Un stage chez Stellantis sur le développement de nouveaux composants, puis chez G&F Châtelain (Chanel Horlogerie & Joaillerie) sur la transformation des achats, m'ont confirmé cette attirance pour les projets qui mêlent contact terrain et vision stratégique. Aujourd'hui, je complète ce parcours par un double diplôme en management à l'IAE Nancy, et je suis à la recherche d'un stage de fin d'études ou d'un VIE à partir du 22 mars 2027.",
+        "Cette intuition m'a poussé à changer de trajectoire. Après un BTS en apprentissage, j'ai choisi une prépa ATS pour pousser plus loin mes connaissances théoriques et me donner les moyens de viser plus haut, avant de rejoindre Mines Nancy en Génie Industriel & Matériaux. J'ai voulu comprendre les systèmes à toutes les échelles : celle d'une pièce mécanique, celle d'une chaîne d'approvisionnement, celle d'une entreprise entière. Un stage chez Stellantis sur le développement de nouveaux composants, puis chez G&F Châtelain (Chanel Horlogerie & Joaillerie) sur la transformation des achats, m'ont confirmé cette attirance pour les projets qui mêlent contact terrain et vision stratégique. Aujourd'hui, je complète ce parcours par un double diplôme en management à l'IAE Nancy, pour relier les décisions d'atelier à leurs conséquences financières et stratégiques.",
         "Ce parcours atypique, du garage à l'école d'ingénieurs, est sans doute ce qui me définit le mieux. J'aime comprendre les choses depuis le terrain avant de les repenser d'en haut.",
         "Ce qui me fait avancer aujourd'hui, c'est toujours un peu la même chose que dans ce garage : l'envie de comprendre pour mieux faire. Sur le terrain de sport, dans un livre de philosophie ou simplement en marchant dehors, je retrouve cette même discipline tranquille qui m'a construit, me dépasser, prendre du recul, rester lucide. Et dans mon travail, cette énergie se tourne naturellement vers ce qui invente demain : l'optimisation, l'automatisation, l'intelligence artificielle. Je crois profondément qu'on ne cesse jamais vraiment d'apprendre, et c'est sans doute cette curiosité, plus que tout le reste, qui me pousse à avancer.",
       ],
@@ -41,9 +41,9 @@ export const translations = {
           title: "Stage Assistant Ingénieur R&D",
           company: "Stellantis – Centre Technique de Belchamp",
           description: [
-            "Étude approfondie d'un prototype de disque de frein à revêtement dur (hard coating).",
-            "Caractérisation, suivi des protocoles d'essais et traitement des données expérimentales.",
-            "Rédaction de rapports techniques et contribution aux revues d'avancement projet.",
+            "Étude technique d'un prototype critique de disque de frein à revêtement dur : nouveau matériau et nouveau procédé de dépôt.",
+            "Préparation et suivi des protocoles d'essais, traitement des données et analyse des écarts aux objectifs fonctionnels.",
+            "Rapports techniques et supports de revue pour la R&D, en consolidant les apports des équipes matériaux, procédés et essais.",
           ],
         },
         {
@@ -53,16 +53,69 @@ export const translations = {
           title: "Apprenti Mécanicien Automobile",
           company: "Garage Feneis (Peugeot/Citroën) & Garage André",
           description: [
-            "5 ans d'alternance en diagnostic et maintenance sur l'ensemble des organes mécaniques et électroniques.",
+            "5 ans d'alternance en diagnostic et maintenance sur l'ensemble des organes mécaniques et électroniques : une méthode de diagnostic structurée, de la cause racine à la réparation.",
             "Réception clientèle, conseil technique et activité personnelle d'achat-revente de véhicules.",
             "1ère place — Concours national des apprentis mécaniciens BMW France (avril 2023).",
           ],
         },
       ],
     },
+    education: {
+      title: "Formation",
+      desc: "Ingénierie, management, et une base solide d'atelier.",
+      entries: [
+        {
+          id: 1,
+          period: "2024 - 2027",
+          title: "Diplôme d'ingénieur, Génie Industriel & Matériaux",
+          school: "Mines Nancy, Université de Lorraine",
+          description: [
+            "Supply chain, Lean Manufacturing, gestion de production, recherche opérationnelle, bases de données, VBA et gestion de projet.",
+            "À venir : optimisation de la supply chain, Six Sigma, ERP, aide à la décision multicritère et deep learning.",
+          ],
+        },
+        {
+          id: 2,
+          period: "2026 - 2027",
+          title: "Master Management et Administration des Entreprises (double diplôme)",
+          school: "IAE Nancy, Université de Lorraine",
+          description: [
+            "Comptabilité financière, finance d'entreprise, contrôle de gestion, stratégie et innovation, supply chain et qualité, systèmes d'information.",
+          ],
+        },
+        {
+          id: 3,
+          period: "2023 - 2024",
+          title: "Classe préparatoire ATS",
+          school: "Lycée Louis Armand, Mulhouse",
+          description: [
+            "Programme intensif en mathématiques, physique et sciences de l'ingénieur.",
+          ],
+        },
+        {
+          id: 4,
+          period: "2021 - 2023",
+          title: "BTS Maintenance des véhicules, en apprentissage",
+          school: "Lycée Émile Mathis, Schiltigheim",
+          description: [],
+        },
+      ],
+    },
+    availability: {
+      badge: "Disponible dès le 22 mars 2027",
+      subject: "Stage de fin d'études à partir du 22 mars 2027",
+    },
+    projects: {
+      title: "Projets",
+      close: "Fermer",
+      tools: "Outils",
+    },
+    footer: {
+      rights: "Tous droits réservés.",
+    },
     skills: {
-      title: "Compétences",
-      desc: "De l'analyse de données au pilotage terrain.",
+      title: "Outils numériques",
+      desc: "Les logiciels et outils numériques que j'utilise, de l'analyse de données à l'automatisation.",
     },
     contact: {
       title: "TRAVAILLONS ENSEMBLE",
@@ -88,17 +141,17 @@ export const translations = {
   en: {
     hero: {
       greeting: "Hi, I am",
-      subtitle: "Industrial Engineering & Materials Student",
-      tagline: "End-of-studies internship / VIE from 22 March 2027 · French-speaking Switzerland first",
+      subtitle: "Industrial Engineering & Materials Student · Dual Degree in Management and Business Administration",
+      tagline: "Looking for an internship starting 22 March 2027",
       hireMe: "Hire Me",
       resume: "Resume",
     },
     about: {
       title: "About",
       paragraphs: [
-        "Engineering student at Mines Nancy (Industrial Engineering & Materials) with a dual management degree at IAE Nancy, I am looking for an end-of-studies internship or a VIE starting 22 March 2027, French-speaking Switzerland first. What draws me: industrial transformation, operational performance and AI applied to industry.",
+        "Engineering student at Mines Nancy (Industrial Engineering & Materials) with a dual degree in Management and Business Administration at IAE Nancy, I am looking for an end-of-studies internship or a VIE of at least 25 weeks starting 22 March 2027, French-speaking Switzerland first. What draws me: industrial transformation, operational performance and AI applied to industry.",
         "It all started in the family garage. As a child, then as an apprentice, I grew up between open hoods and fault diagnostics, in a world where every problem has a cause that must be understood before it can be solved. It was there, repairing cars alongside my father, that I developed a taste for work well done — but more than that, for something else: understanding how a garage really runs, how you manage inventory, customers, priorities. The technical gesture interested me, but it was the invisible mechanics behind it — the organization, the flows, the systems — that truly drew me in.",
-        "This intuition pushed me to change direction. After a work-study BTS, I chose an ATS preparatory class to push my theoretical knowledge further and give myself the means to aim higher, before joining Mines Nancy in Industrial Engineering & Materials. I wanted to understand systems at every scale: that of a mechanical part, that of a supply chain, that of an entire company. An internship at Stellantis on new component development, then at G&F Châtelain (Chanel Watchmaking & Jewelry) on purchasing transformation, confirmed this pull toward projects that combine shopfloor exposure with strategic vision. Today I'm rounding out this path with a dual degree in management at IAE Nancy, and I'm looking for an end-of-studies internship or a VIE starting 22 March 2027.",
+        "This intuition pushed me to change direction. After a work-study BTS, I chose an ATS preparatory class to push my theoretical knowledge further and give myself the means to aim higher, before joining Mines Nancy in Industrial Engineering & Materials. I wanted to understand systems at every scale: that of a mechanical part, that of a supply chain, that of an entire company. An internship at Stellantis on new component development, then at G&F Châtelain (Chanel Watchmaking & Jewelry) on purchasing transformation, confirmed this pull toward projects that combine shopfloor exposure with strategic vision. Today I'm rounding out this path with a dual degree in management at IAE Nancy, to connect shopfloor decisions with their financial and strategic consequences.",
         "This unusual path, from the garage to engineering school, is probably what defines me best. I like to understand things from the ground up before rethinking them from above.",
         "What drives me today is still, in a way, the same thing as in that garage: the desire to understand in order to do better. On the sports field, in a philosophy book, or simply walking outside, I find that same quiet discipline that shaped me — pushing myself, stepping back, staying clear-headed. And in my work, that energy naturally turns toward what invents tomorrow: optimization, automation, artificial intelligence. I deeply believe we never really stop learning, and it's probably that curiosity, more than anything else, that keeps me moving forward.",
       ],
@@ -127,9 +180,9 @@ export const translations = {
           title: "R&D Engineering Intern",
           company: "Stellantis – Belchamp Technical Center",
           description: [
-            "In-depth study of a hard-coated brake disc prototype.",
-            "Characterization, test protocol monitoring and experimental data processing.",
-            "Technical report writing and contribution to project progress reviews.",
+            "Technical study of a critical hard-coated brake disc prototype: new material and new deposition process.",
+            "Prepared and followed test protocols, processed experimental data and analysed deviations against functional targets.",
+            "Technical reports and review material for R&D, consolidating input from materials, process and testing teams.",
           ],
         },
         {
@@ -139,16 +192,69 @@ export const translations = {
           title: "Automotive Mechanic Apprentice",
           company: "Garage Feneis (Peugeot/Citroën) & Garage André",
           description: [
-            "5 years of work-study in diagnosis and maintenance across mechanical and electronic systems.",
+            "5 years of work-study in diagnosis and maintenance across mechanical and electronic systems: a structured diagnostic method, from root cause to repair.",
             "Customer reception, technical advice, and personal buy/sell activity on used vehicles.",
             "1st place — BMW France national apprentice mechanic competition (April 2023).",
           ],
         },
       ],
     },
+    education: {
+      title: "Education",
+      desc: "Engineering, management, and a solid shopfloor foundation.",
+      entries: [
+        {
+          id: 1,
+          period: "2024 - 2027",
+          title: "Engineering Degree, Industrial Engineering & Materials",
+          school: "Mines Nancy, Université de Lorraine",
+          description: [
+            "Supply chain, Lean Manufacturing, production management, operations research, databases, VBA and project management.",
+            "Upcoming: supply chain optimisation, Six Sigma, ERP, multi-criteria decision support and deep learning.",
+          ],
+        },
+        {
+          id: 2,
+          period: "2026 - 2027",
+          title: "Master in Management and Business Administration (dual degree)",
+          school: "IAE Nancy, Université de Lorraine",
+          description: [
+            "Financial accounting, corporate finance, management control, strategy and innovation, supply chain and quality, information systems.",
+          ],
+        },
+        {
+          id: 3,
+          period: "2023 - 2024",
+          title: "ATS preparatory class",
+          school: "Lycée Louis Armand, Mulhouse",
+          description: [
+            "Intensive programme in mathematics, physics and engineering sciences.",
+          ],
+        },
+        {
+          id: 4,
+          period: "2021 - 2023",
+          title: "BTS in Automotive Maintenance, work-study",
+          school: "Lycée Émile Mathis, Schiltigheim",
+          description: [],
+        },
+      ],
+    },
+    availability: {
+      badge: "Available from 22 March 2027",
+      subject: "Internship starting 22 March 2027",
+    },
+    projects: {
+      title: "Projects",
+      close: "Close",
+      tools: "Tools",
+    },
+    footer: {
+      rights: "All rights reserved.",
+    },
     skills: {
-      title: "Skills",
-      desc: "From data analysis to shopfloor operations.",
+      title: "Digital Tools",
+      desc: "The software and digital tools I use, from data analysis to automation.",
     },
     contact: {
       title: "LET'S WORK TOGETHER",
